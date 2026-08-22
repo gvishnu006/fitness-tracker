@@ -28,7 +28,7 @@ function ExerciseItem({ exercise, index, onUpdate, onRemove, isDragging }: Exerc
       sets,
       reps,
       weight: weight ? parseFloat(weight).toString() : null,
-      duration: duration ? parseInt(duration) : null,
+      duration: duration ? parseInt(duration, 10) : null,
       restTime,
     });
   };
