@@ -11,7 +11,7 @@ interface ProgressRingProps {
   bgColor?: string;
   showLabel?: boolean;
   label?: string;
-  value?: number;
+  value?: number | string;
   unit?: string;
   animate?: boolean;
   className?: string;
