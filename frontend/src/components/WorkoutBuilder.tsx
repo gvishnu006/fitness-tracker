@@ -27,8 +27,8 @@ function ExerciseItem({ exercise, index, onUpdate, onRemove, isDragging }: Exerc
       ...exercise,
       sets,
       reps,
-      weight: weight ? parseFloat(weight) : undefined,
-      duration: duration ? parseInt(duration) : undefined,
+      weight: weight ? parseFloat(weight).toString() : null,
+      duration: duration ? parseInt(duration) : null,
       restTime,
     });
   };
