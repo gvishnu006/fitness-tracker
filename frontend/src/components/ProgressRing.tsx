@@ -36,8 +36,12 @@ export function ProgressRing({
 
   const ringStyle = {
     strokeDasharray: circumference,
-    strokeDashoffset: animate ? circumference : offset,
-    transition: animate ? { duration: 1.5, ease: [0.4, 0, 0.2, 1] } : { duration: 0 },
+    strokeDashoffset: offset,
+  } as React.CSSProperties;
+
+  const bgRingStyle = {
+    strokeDasharray: circumference,
+    strokeDashoffset: circumference,
   } as React.CSSProperties;
 
   return (
