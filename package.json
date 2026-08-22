@@ -16,12 +16,10 @@
     "start": "npm run start --workspace=backend",
     "db:push": "npm run db:push --workspace=backend",
     "db:studio": "npm run db:studio --workspace=backend",
-    "lint": "npm run lint --workspaces",
-    "prepare": "husky install"
+    "lint": "npm run lint --workspaces"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "husky": "^9.0.11"
+    "concurrently": "^8.2.2"
   },
   "packageManager": "npm@10.2.0"
 }
