@@ -18,8 +18,8 @@ interface ExerciseItemProps {
 function ExerciseItem({ exercise, index, onUpdate, onRemove, isDragging }: ExerciseItemProps) {
   const [sets, setSets] = useState(exercise.sets);
   const [reps, setReps] = useState(exercise.reps);
-  const [weight, setWeight] = useState(exercise.weight || '');
-  const [duration, setDuration] = useState(exercise.duration || '');
+  const [weight, setWeight] = useState<string>(exercise.weight || '');
+  const [duration, setDuration] = useState<string>(exercise.duration ? String(exercise.duration) : '');
   const [restTime, setRestTime] = useState(exercise.restTime);
 
   const handleChange = () => {
