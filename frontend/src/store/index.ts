@@ -8,7 +8,7 @@ export interface Workout {
   description: string | null;
   duration: number | null;
   caloriesBurned: number | null;
-  difficulty: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
   isTemplate: boolean;
   tags: string[];
   createdAt: string;
