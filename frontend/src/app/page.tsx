@@ -7,7 +7,7 @@ import { useWorkouts, useSessions, useStats } from '@/hooks/useWorkouts';
 import { DashboardStats } from '@/components/DashboardStats';
 import { WorkoutBuilder, ExerciseSelector } from '@/components/WorkoutBuilder';
 import { ProgressRing } from '@/components/ProgressRing';
-import { WeeklyProgressData, Workout, Session } from '@/types';
+import { WeeklyProgress, Workout, Session } from '@/types';
 import { formatDistanceToNow, format } from 'date-fns';
 import toast from 'react-hot-toast';
 

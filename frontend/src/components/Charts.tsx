@@ -17,6 +17,7 @@ import {
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { motion } from 'framer-motion';
+import { WeeklyProgress } from '@/types';
 
 ChartJS.register(
   CategoryScale,
@@ -31,16 +32,8 @@ ChartJS.register(
   Filler
 );
 
-interface WeeklyProgressData {
-  date: string;
-  workouts: number;
-  duration: number;
-  calories: number;
-  volume: number;
-}
-
 interface ChartProps {
-  data: WeeklyProgressData[];
+  data: WeeklyProgress[];
   metric: 'workouts' | 'duration' | 'calories' | 'volume';
   height?: number;
 }
@@ -277,7 +270,7 @@ export function ProgressChart({
   }
 }
 
-export function MultiMetricChart({ data, height = 300 }: { data: WeeklyProgressData[]; height?: number }) {
+export function MultiMetricChart({ data, height = 300 }: { data: WeeklyProgress[]; height?: number }) {
   const chartData = useMemo(() => ({
     labels: data.map(d => formatDate(d.date)),
     datasets: [

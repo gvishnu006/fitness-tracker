@@ -1,9 +1,8 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { DragEndEvent, DragStartEvent, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors, DropAnimation } from '@dnd-kit/core';
+import { DragEndEvent, DragStartEvent, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GripVertical, Trash2, Plus, Minus, Dumbbell, Timer, Zap, X } from 'lucide-react';
 import { Exercise } from '@/types';
@@ -292,18 +291,6 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
             </button>
           </SortableContext>
         </div>
-
-        <DropAnimation
-          sideEffects={(args) => {
-            const { active } = args;
-            if (active?.node?.current) {
-              const element = active.node.current as HTMLElement;
-              const rect = element.getBoundingClientRect();
-              return [{ keyframes: { transform: CSS.Transform.toString({ x: 0, y: 0 }) } }];
-            }
-            return [];
-          }}
-        />
 
         <div className="p-4 border-t border-dark-200 dark:border-dark-700 flex justify-end gap-3">
           <button

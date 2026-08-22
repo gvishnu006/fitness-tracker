@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { Activity, Flame, Clock, Target, Trophy, Zap, Dumbbell, Calendar, TrendingUp, ArrowRight } from 'lucide-react';
 import { ActivityRings, ProgressRing, CircularProgress } from '@/components/ProgressRing';
 import { WeeklyBarChart, WeeklyLineChart, MultiMetricChart } from '@/components/Charts';
-import { WeeklyProgressData, UserStats } from '@/types';
+import { WeeklyProgress, UserStats } from '@/types';
 
 interface DashboardStatsProps {
   stats: UserStats | null;
-  weeklyProgress: WeeklyProgressData[];
+  weeklyProgress: WeeklyProgress[];
 }
 
 export function DashboardStats({ stats, weeklyProgress }: DashboardStatsProps) {
