@@ -182,12 +182,14 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
   );
 
   const handleDragStart = useCallback((event: DragStartEvent) => {
-    event.active.data.current?.isDragging = true;
+    const data = event.active.data.current;
+    if (data) data.isDragging = true;
   }, []);
 
   const handleDragEnd = useCallback((event: DragEndEvent) => {
     const { active, over } = event;
-    active.data.current?.isDragging = false;
+    const data = active.data.current;
+    if (data) data.isDragging = false;
 
     if (over && active.id !== over.id) {
       setExercises((items) => {
