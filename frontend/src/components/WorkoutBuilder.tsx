@@ -202,7 +202,8 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
   }, []);
 
   const handleDragCancel = useCallback((event: DragEndEvent) => {
-    event.active.data.current.isDragging = false;
+    const data = event.active.data.current;
+    if (data) data.isDragging = false;
   }, []);
 
   const addExercise = () => {
