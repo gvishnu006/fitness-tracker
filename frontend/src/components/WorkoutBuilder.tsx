@@ -209,14 +209,16 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
   const addExercise = () => {
     const newExercise: Exercise = {
       id: Date.now() + Math.random(),
+      workoutId: 0,
       name: '',
       sets: 3,
       reps: 10,
-      weight: undefined,
-      duration: undefined,
+      weight: null,
+      duration: null,
       restTime: 60,
       order: exercises.length,
       notes: '',
+      createdAt: new Date().toISOString(),
     };
     setExercises((prev) => [...prev, newExercise]);
   };
