@@ -272,7 +272,6 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
           <SortableContext
             items={exercises.map((ex) => ex.id)}
             strategy={verticalListSortingStrategy}
-            collisionDetection={closestCorners}
           >
             <AnimatePresence>
               {exercises.map((exercise, index) => (
