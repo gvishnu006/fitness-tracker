@@ -281,7 +281,7 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
                   index={index}
                   onUpdate={updateExercise}
                   onRemove={() => removeExercise(exercise.id)}
-                  isDragging={exercise.id === (document.querySelector('[data-dnd-kit-draggable]') as HTMLElement)?.dataset.dndKitDraggableId}
+                  isDragging={String(exercise.id) === (document.querySelector('[data-dnd-kit-draggable]') as HTMLElement)?.dataset.dndKitDraggableId}
                 />
               ))}
             </AnimatePresence>
