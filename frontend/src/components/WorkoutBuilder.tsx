@@ -172,7 +172,7 @@ export function WorkoutBuilder({ initialExercises = [], onSave, onCancel, workou
     initialExercises.length > 0
       ? initialExercises.map((ex, i) => ({ ...ex, order: i }))
       : [
-          { id: Date.now(), name: '', sets: 3, reps: 10, weight: undefined, duration: undefined, restTime: 60, order: 0, notes: '' },
+          { id: Date.now(), workoutId: 0, name: '', sets: 3, reps: 10, weight: null, duration: null, restTime: 60, order: 0, notes: '', createdAt: new Date().toISOString() },
         ]
   );
 
